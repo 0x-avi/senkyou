@@ -11,7 +11,6 @@ load_dotenv()
 def create_app() -> FastAPI:
     app = FastAPI(title="Course Search API", version="0.1.0")
 
-    # Allow all origins (temporary - not for production)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -29,8 +28,11 @@ def create_app() -> FastAPI:
 
     create_indexes(qdrant.client, qdrant.collection_name)
     register_routes(app, qdrant)
-
     return app
 
-
 app = create_app()
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
