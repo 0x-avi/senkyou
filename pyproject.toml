@@ -1,0 +1,17 @@
+[project]
+name = "senkyou"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.129.2",
+    "fastembed>=0.7.4",
+    "ipykernel>=7.2.0",
+    "onnx>=1.20.1",
+    "onnxruntime>=1.24.2",
+    "python-dotenv>=1.2.1",
+    "qdrant-client>=1.17.0",
+    "transformers>=5.2.0",
+    "uvicorn>=0.41.0",
+]
