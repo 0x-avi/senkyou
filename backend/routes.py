@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 from qdrant import QdrantManager
-from handlers import search_handler, search_by_language_handler, health_handler
+from backend.handlers import search_handler, search_by_language_handler, health_handler
 
 
 def register_routes(app: FastAPI, qdrant: QdrantManager) -> None:
